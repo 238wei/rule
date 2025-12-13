@@ -1,12 +1,24 @@
+# =========================================================
 # NAME: PrivateTracker
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-03-11 02:13:27
-# DOMAIN: 129
-# DOMAIN-KEYWORD: 4
-# DOMAIN-SUFFIX: 123
-# IP-CIDR: 3
-# TOTAL: 259
+#
+# 说明（你关心的点）：
+# 1) 本规则集同时包含：
+#    - 公共 Tracker / BT Tracker（DOMAIN）
+#    - PT 站点域名（DOMAIN-SUFFIX）
+#    - 泛匹配关键字（DOMAIN-KEYWORD）——风险较高，可能误伤
+#    - 少量固定 IP（IP-CIDR）
+# 2) 如果你追求“规则评估不触发 DNS lookup”，DOMAIN-KEYWORD / IP-CIDR
+#    往往更容易把你拖进复杂匹配路径；但这里是原作者设计的一部分。
+# =========================================================
+
+
+# -------------------------
+# A. 公共 Tracker / BT Tracker / Announce 域名（精确域名匹配）
+# 用途：命中这些域名时，通常可判定为 Tracker 通信或 BT 相关基础设施
+# -------------------------
 DOMAIN,0123456789nonexistent.com
 DOMAIN,0d.kebhana.mx
 DOMAIN,1337.abcvg.info
@@ -136,6 +148,13 @@ DOMAIN,www.genesis-sp.org
 DOMAIN,www.torrent.eu.org
 DOMAIN,www.torrentsnipe.info
 DOMAIN,www.wareztorrent.com
+
+
+# -------------------------
+# B. PT 站点域名（后缀匹配）
+# 用途：常见私有种子站点 / PT 社区入口域名
+# 备注：DOMAIN-SUFFIX 会覆盖其所有子域名，适合站点级分流
+# -------------------------
 DOMAIN-SUFFIX,1ptba.com
 DOMAIN-SUFFIX,2xfree.org
 DOMAIN-SUFFIX,52pt.site
@@ -260,16 +279,33 @@ DOMAIN-SUFFIX,u2.dmhy.org
 DOMAIN-SUFFIX,uhdbits.org
 DOMAIN-SUFFIX,xauat6.edu.cn
 DOMAIN-SUFFIX,ubits.club
+
+# 下面是原文件中注释掉的一条（保留原作者意图）
 #DOMAIN-SUFFIX,leaves.red
+
+# 原文件里混有少量带 www 的“后缀项”，语义上仍按站点处理
 DOMAIN-SUFFIX,www.agsvpt.com
 DOMAIN-SUFFIX,www.htpt.cc
 DOMAIN-SUFFIX,share.ilolicon.com
 DOMAIN-SUFFIX,fsm.name
-DOMAIN-SUFFIX,www.htpt.cc
+
+
+# -------------------------
+# C. 模糊关键字匹配（高风险：可能误伤）
+# 用途：覆盖无法枚举的 Tracker/站点变体
+# 风险：关键字过宽会把正常业务域名也匹配进去，建议谨慎放置顺序
+# -------------------------
 DOMAIN-KEYWORD,announce
 DOMAIN-KEYWORD,chdbits
 DOMAIN-KEYWORD,m-team
 DOMAIN-KEYWORD,torrent
+
+
+# -------------------------
+# D. 固定 IP（少量）
+# 用途：已知 IP 入口或基础设施
+# 备注：IP 规则与域名规则的决策路径不同，可能触发额外的匹配/解析行为
+# -------------------------
 IP-CIDR,207.241.226.111/32
 IP-CIDR,207.241.231.226/32
 IP-CIDR,52.58.128.163/32
