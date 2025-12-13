@@ -1,10 +1,5 @@
 # =========================================================
 # NAME: PrivateTracker
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-03-11 02:13:27
-#
-# 说明（你关心的点）：
 # 1) 本规则集同时包含：
 #    - 公共 Tracker / BT Tracker（DOMAIN）
 #    - PT 站点域名（DOMAIN-SUFFIX）
