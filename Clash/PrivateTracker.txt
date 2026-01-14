@@ -160,6 +160,8 @@ DOMAIN-SUFFIX,animetorrents.me
 DOMAIN-SUFFIX,anthelion.me
 DOMAIN-SUFFIX,asiancinema.me
 DOMAIN-SUFFIX,audiences.me
+DOMAIN-SUFFIX,agsvpt.com
+DOMAIN-SUFFIX,agsv.top
 DOMAIN-SUFFIX,avgv.cc
 DOMAIN-SUFFIX,avistaz.to
 DOMAIN-SUFFIX,awesome-hd.me
@@ -286,13 +288,12 @@ DOMAIN-SUFFIX,cravatar.cn
 
 
 # 下面是原文件中注释掉的一条（保留原作者意图）
-#DOMAIN-SUFFIX,leaves.red
+
 
 # 原文件里混有少量带 www 的“后缀项”，语义上仍按站点处理
 DOMAIN-SUFFIX,www.agsvpt.com
 DOMAIN-SUFFIX,www.htpt.cc
 DOMAIN-SUFFIX,share.ilolicon.com
-DOMAIN-SUFFIX,fsm.name
 
 
 # -------------------------
