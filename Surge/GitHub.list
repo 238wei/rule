@@ -40,3 +40,5 @@ DOMAIN-KEYWORD,github
 DOMAIN-SUFFIX,unraid.net
 # BT 反吸血工具域名
 DOMAIN-SUFFIX,pbh-btn.com
+# 国内开发者 / 更新源可能和PBH有关
+DOMAIN-SUFFIX,ghostchu.com
