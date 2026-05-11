@@ -42,3 +42,5 @@ DOMAIN-SUFFIX,unraid.net
 DOMAIN-SUFFIX,pbh-btn.com
 # 国内开发者 / 更新源可能和PBH有关
 DOMAIN-SUFFIX,ghostchu.com
+# tailscale.com
+DOMAIN-SUFFIX,tailscale.com
